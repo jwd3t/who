@@ -13,7 +13,7 @@ The project currently has the shared foundation ready:
 - EF Core runs `Database.Migrate()` when the app starts.
 - Shared repositories, unit of work, audit interceptor, naming strategy, localization resources, middleware, and mediator abstractions are present.
 
-Swagger is empty for now because there are no REST controllers yet.
+Swagger is empty for now because no bounded context has REST endpoints yet. Controllers are created as part of each bounded context, under its own `Interfaces/Rest` layer.
 
 ## Important Settings To Review
 
@@ -175,6 +175,12 @@ Endpoint:
 GET /api/v1/devices
 ```
 
+Controller location:
+
+```text
+Hardware/Interfaces/Rest/DevicesController.cs
+```
+
 ## 2. Telemetry Bounded Context
 
 Create this structure:
@@ -244,6 +250,12 @@ Endpoint:
 POST /api/v1/telemetry-data-records
 ```
 
+Controller location:
+
+```text
+Telemetry/Interfaces/Rest/TelemetryDataRecordsController.cs
+```
+
 Expected success response:
 
 ```text
@@ -294,6 +306,8 @@ or another simple internal mechanism.
 
 ## AppDbContext Changes After Creating BCs
 
+This is one of the few global integration steps required when a bounded context is added.
+
 Once these methods exist:
 
 ```csharp
@@ -318,6 +332,8 @@ protected override void OnModelCreating(ModelBuilder builder)
 Do not add these calls before the extension methods exist, or the project will stop compiling.
 
 ## Program.cs Items To Add Later
+
+This is the second global integration step. Add services here only after their interfaces and implementations exist.
 
 When each service/repository exists, register it in `Program.cs`.
 
@@ -359,6 +375,27 @@ Global exception handling:
 ```csharp
 app.UseGlobalExceptionHandler();
 ```
+
+## What Is Global And What Belongs To Each BC
+
+When creating a new bounded context, most files belong inside that bounded context. The global files should only connect that context to the application.
+
+Files inside the bounded context:
+
+- Aggregates, entities, value objects, commands, queries, events.
+- Repositories interfaces.
+- Application services.
+- Infrastructure repository implementations.
+- Fluent API mappings and `Apply...Configuration()` extension.
+- REST controllers, request/response resources, and assemblers.
+
+Global files to update after the bounded context exists:
+
+- `Shared/Infrastructure/Persistence/EntityFrameworkCore/Configuration/AppDbContext.cs`
+- `Program.cs`
+- EF Core migrations
+
+In short: controllers are not added separately as a global setup step. They are part of developing the bounded context. The integration steps are `AppDbContext`, dependency injection in `Program.cs`, and migrations.
 
 ## Migration Workflow
 

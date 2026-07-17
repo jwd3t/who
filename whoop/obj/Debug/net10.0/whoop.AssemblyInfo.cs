@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("whoop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cca2181fc80e378184c128b15387004d4148a4ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("whoop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("whoop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

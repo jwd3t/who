@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xt/n7w1Ne/o=",
+  "dgSpecHash": "7i+jfqjPgX4=",
   "success": true,
   "projectFilePath": "C:\\Users\\juan\\Documents\\!PracticasOS-AW\\Appsweb\\ef\\whoop\\whoop\\whoop.csproj",
   "expectedPackageFiles": [
@@ -109,7 +109,7 @@
     {
       "code": "NU1903",
       "level": "Warning",
-      "message": "El paquete \"Microsoft.OpenApi\" 2.4.1 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
+      "message": "Package 'Microsoft.OpenApi' 2.4.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
       "projectPath": "C:\\Users\\juan\\Documents\\!PracticasOS-AW\\Appsweb\\ef\\whoop\\whoop\\whoop.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\juan\\Documents\\!PracticasOS-AW\\Appsweb\\ef\\whoop\\whoop\\whoop.csproj",

@@ -209,3 +209,4 @@ C:\Users\juan\Documents\!PracticasOS-AW\Appsweb\ef\whoop\build-check\whoop.runti
 C:\Users\juan\Documents\!PracticasOS-AW\Appsweb\ef\whoop\build-check\whoop.dll
 C:\Users\juan\Documents\!PracticasOS-AW\Appsweb\ef\whoop\build-check\whoop.pdb
 C:\Users\juan\Documents\!PracticasOS-AW\Appsweb\ef\whoop\build-check\es\whoop.resources.dll
+C:\Users\juan\Documents\!PracticasOS-AW\Appsweb\ef\whoop\whoop\obj\Debug\net10.0\whoop.sourcelink.json
