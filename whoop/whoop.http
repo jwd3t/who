@@ -1,0 +1,6 @@
+@whoop_HostAddress = http://localhost:5010
+
+GET {{whoop_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
